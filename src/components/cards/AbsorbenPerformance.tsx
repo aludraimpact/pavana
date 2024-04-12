@@ -38,13 +38,6 @@ function AbsorbenPerformance() {
   };
   const options = {
     maintainAspectRatio: false,
-    scales: {
-      yAxes: [{
-          ticks: {
-              beginAtZero: true
-          }
-      }]
-    }
   }
 
 

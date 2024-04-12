@@ -1,7 +1,7 @@
 export const options = {
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit',
+  year: 'numeric' as 'numeric',
+  month: '2-digit' as '2-digit',
+  day: '2-digit' as '2-digit',
 };
 
 export const currentDate = () => {
