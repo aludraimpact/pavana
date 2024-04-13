@@ -19,7 +19,7 @@ const PageNavbarRightContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentPropsWithoutRef<"div">
 >((props, ref) => (
-  <div ref={ref} className="text-gray-500 md:flex gap-2 backdrop-blur-md bg-white/40 p-1 md:py-3 md:px-7 md:rounded-3xl rounded-full" {...props} />
+  <div ref={ref} className="justify-end" {...props} />
 ));
 
 PageNavbarRightContent.displayName = "PageNavbarRightContent";

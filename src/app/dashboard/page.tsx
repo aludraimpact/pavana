@@ -1,45 +1,20 @@
 "use client";
 
 import { Calendar2 } from "iconsax-react";
-import PageNavbar, {
-  PageNavbarLeftContent,
-  PageNavbarRightContent,
-} from "@/components/layout/PageNavbar";
 import PageContent from "@/components/layout/PageContent";
 import AbsorbenPerformance from "@/components/cards/AbsorbenPerformance";
 import Co2Captured from "@/components/cards/Co2Captured";
 import BasicInfo from "@/components/cards/BasicInfo";
-import ProfileImage from "@/components/assets/profile.png";
-import PavanaLogo from "@/components/assets/logos/Pavana-logo.svg";
-import Image from "next/image";
 import FunctionUnit from "@/components/cards/FunctionUnit";
 import Summary from "@/components/cards/Summary";
 import { currentDate } from "@/helpers/dates.helper";
 import ProtectedPage from "@/components/layout/ProtectedPage";
+import Navbar from "@/components/ui/Navbar";
 
 const Dashboard = () => {
   return (
     <ProtectedPage>
-      <PageNavbar>
-        <PageNavbarLeftContent>
-          <Image src={PavanaLogo} alt="Pavana Logo" height={50} />
-        </PageNavbarLeftContent>
-
-        <PageNavbarRightContent>
-          <Image
-            src={ProfileImage}
-            alt="User"
-            width={40}
-            height={40}
-            className="rounded-full"
-          />
-          <div className="hidden md:block">
-            <p className="text-sm font-semibold text-gray-800">Steve Jobs</p>
-            <p className="text-xs font-medium text-gray-700">Welcome back</p>
-          </div>
-        </PageNavbarRightContent>
-      </PageNavbar>
-
+      <Navbar />
       <PageContent>
         <div className="flex gap-2 font-medium items-center">
           <Calendar2 variant="Bold" size={18} className="text-black" />
