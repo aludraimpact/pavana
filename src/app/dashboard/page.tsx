@@ -15,18 +15,14 @@ import Image from "next/image";
 import FunctionUnit from "@/components/cards/FunctionUnit";
 import Summary from "@/components/cards/Summary";
 import { currentDate } from "@/helpers/dates.helper";
+import ProtectedPage from "@/components/layout/ProtectedPage";
 
-function Dashboard() {
+const Dashboard = () => {
   return (
-    <div>
+    <ProtectedPage>
       <PageNavbar>
         <PageNavbarLeftContent>
-          <Image
-            src={PavanaLogo}
-            alt="Pavana Logo"
-            // width={40}
-            height={50}
-          />
+          <Image src={PavanaLogo} alt="Pavana Logo" height={50} />
         </PageNavbarLeftContent>
 
         <PageNavbarRightContent>
@@ -46,8 +42,8 @@ function Dashboard() {
 
       <PageContent>
         <div className="flex gap-2 font-medium items-center">
-          <Calendar2 variant="Bold" size={18} />
-          <p>Date: {currentDate()}</p>
+          <Calendar2 variant="Bold" size={18} className="text-black" />
+          <p className="text-black">Date: {currentDate()}</p>
         </div>
         <div className="space-y-4 columns-1 sm:columns-2 lg:columns-2">
           <div className="break-inside-avoid-column space-y-4">
@@ -87,8 +83,8 @@ function Dashboard() {
           </div>
         </div>
       </PageContent>
-    </div>
+    </ProtectedPage>
   );
-}
+};
 
 export default Dashboard;
