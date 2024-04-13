@@ -12,42 +12,50 @@ import {
 ChartJS.register(CategoryScale, LineElement, PointElement, LinearScale, Title);
 
 import { populateCurrentData, XTimeAxis, YAxis } from "@/helpers/graph.helper";
+import { currentDate, customDateBeforeToday } from "@/helpers/dates.helper";
+import Legend from "./ui/Legend";
 
 function Co2Captured() {
-  const YAxisData1 = YAxis("captured1");
-  const YAxisData2 = YAxis("captured2");
-  const YAxisData3 = YAxis("captured3");
+  const beforeYesterdayData = YAxis("captured1");
+  const yesterdayData = YAxis("captured2");
+  const currentData = YAxis("captured3");
 
   const yValues = Object.values(XTimeAxis());
-  const currentDateData = populateCurrentData(Object.keys(XTimeAxis()), YAxisData3.dataSet);
+  const currentDateData = populateCurrentData(
+    Object.keys(XTimeAxis()),
+    currentData.dataSet
+  );
 
   const data = {
     labels: yValues,
     datasets: [
       {
-        label: "Data 1",
-        data: YAxisData1.dataSet,
-        borderWidth: 3,
-        borderColor: YAxisData1.color,
-      },
-      {
-        label: "Data 2",
-        data: YAxisData2.dataSet,
-        borderWidth: 3,
-        borderColor: YAxisData2.color,
-      },
-      {
         label: "Data 3",
         data: currentDateData,
         borderWidth: 3,
-        borderColor: YAxisData3.color,
+        borderColor: currentData.color,
+        pointBackgroundColor: currentData.color,
+      },
+      {
+        label: "Data 2",
+        data: yesterdayData.dataSet,
+        borderWidth: 3,
+        borderColor: yesterdayData.color,
+        pointBackgroundColor: yesterdayData.color,
+      },
+      {
+        label: "Data 1",
+        data: beforeYesterdayData.dataSet,
+        borderWidth: 3,
+        borderColor: beforeYesterdayData.color,
+        pointBackgroundColor: beforeYesterdayData.color,
       },
     ],
   };
 
   const options = {
     maintainAspectRatio: false,
-  }
+  };
 
   return (
     <div className="border text-gray-500 w-full p-3 rounded-2xl">
@@ -63,6 +71,12 @@ function Co2Captured() {
 
       {/* content */}
       <div className="h-30 justify-between">
+        <div className="flex gap-4 justify-center">
+          <Legend color={beforeYesterdayData.color} label={customDateBeforeToday(2)} />
+          <Legend color={yesterdayData.color} label={customDateBeforeToday(1)} />
+          <Legend color={currentData.color} label={currentDate()} />
+        </div>
+
         <div className="w-full h-80">
           <Line data={data} options={options} />
         </div>

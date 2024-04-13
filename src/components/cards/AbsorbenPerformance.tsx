@@ -12,16 +12,22 @@ import {
 ChartJS.register(CategoryScale, LineElement, PointElement, LinearScale, Title);
 
 import { populateCurrentData, XTimeAxis, YAxis } from "@/helpers/graph.helper";
+import { currentDate } from "@/helpers/dates.helper";
+import Legend from "./ui/Legend";
 
 function AbsorbenPerformance() {
   const YAxisData = YAxis("performance");
-  const currentData = populateCurrentData(Object.keys(XTimeAxis()), YAxisData.dataSet);
+  const currentData = populateCurrentData(
+    Object.keys(XTimeAxis()),
+    YAxisData.dataSet
+  );
+  const lineColor = YAxisData.color;
+  const highlightColor = 'red';
   const currentDataColors = currentData.map((el, index) => {
-    let overrideVal = YAxisData.color;
-    if (currentData.length-1 === index) {
-      overrideVal = "red";
+    if (currentData.length - 1 === index) {
+      return highlightColor;
     }
-    return overrideVal;
+    return lineColor;
   });
 
   const data = {
@@ -38,8 +44,12 @@ function AbsorbenPerformance() {
   };
   const options = {
     maintainAspectRatio: false,
-  }
-
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  };
 
   return (
     <div className="border text-gray-500 w-full p-3 rounded-2xl">
@@ -54,9 +64,13 @@ function AbsorbenPerformance() {
       <hr className="bg-gray-400 my-4" />
 
       {/* content */}
-      <div className="flex justify-between">
+      <div>
+        <Legend color={lineColor} label={currentDate()} legendType="square" />
         <div className="w-full h-80">
           <Line data={data} options={options} />
+        </div>
+        <div className="mt-4 pr-2">
+          <Legend color={highlightColor} label='Reactor Replacement' legendType="round" position="right"/>
         </div>
       </div>
     </div>

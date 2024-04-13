@@ -1,4 +1,4 @@
-import { currentDate, yesterdayDate } from "@/helpers/dates.helper";
+import { currentDate, customDateBeforeToday } from "@/helpers/dates.helper";
 import { populateCurrentData, XTimeAxis, YAxis } from "@/helpers/graph.helper";
 
 const Summary = () => {
@@ -10,8 +10,14 @@ const Summary = () => {
     YAxisData3
   );
 
+  const yesterdayDateData = populateCurrentData(
+    Object.keys(XTimeAxis()),
+    YAxisData2
+  );
+
   const performanceKG = currentDateData[currentDateData.length - 1];
-  const lastPerformance = YAxisData2[YAxisData2.length - 1];
+  const lastPerformance = yesterdayDateData[yesterdayDateData.length - 1];
+
   const differencePercentage = (
     ((performanceKG - lastPerformance) / lastPerformance) *
     100
@@ -29,11 +35,12 @@ const Summary = () => {
               <p className="text-md">KG</p>
             </div>
             <p className="text-sm text-gray-800">
-              Up by <span className="text-lg">{differencePercentage}%</span> in{" "}
+              {Number(differencePercentage) > 0 ? "Up by" : "Down to"}{" "}
+              <span className="text-lg">{differencePercentage}%</span> in{" "}
               {currentDate()}
             </p>
             <p className="text-sm text-gray-800">
-              compared to {yesterdayDate()}
+              compared to {customDateBeforeToday(1)}
             </p>
           </div>
         </div>
