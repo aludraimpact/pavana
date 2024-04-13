@@ -9,8 +9,9 @@ export const currentDate = () => {
   return now
 };
 
-export const yesterdayDate = () => {
+export const customDateBeforeToday = (minusDate: number) => {
   let date = new Date();
-  date.setDate(date.getDate() - 1);
+  date.setDate(date.getDate() - minusDate);
   return date.toLocaleDateString("id-ID", options);
 };
+
