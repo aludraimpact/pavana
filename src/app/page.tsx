@@ -1,8 +1,7 @@
 "use client"
 import { redirect } from 'next/navigation'
 
-
-function Home() {
+const Home = () => {
   redirect("/login");
 }
 
