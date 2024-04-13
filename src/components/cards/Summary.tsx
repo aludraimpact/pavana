@@ -24,25 +24,22 @@ const Summary = () => {
   ).toFixed(2);
 
   return (
-    <div className="border text-gray-500 w-full  p-3 rounded-2xl">
-      <div className="space-y-3">
-        <div className="flex items-start gap-3 w-full">
-          <div className="w-full space-y-3">
-            <p className="text-sm text-gray-800 font-medium">Performance</p>
-            <div className="flex">
-              <p className="text-6xl">{performanceKG}</p>
-              <div className="mx-2" />
-              <p className="text-md">KG</p>
-            </div>
-            <p className="text-sm text-gray-800">
-              {Number(differencePercentage) > 0 ? "Up by" : "Down to"}{" "}
-              <span className="text-lg">{differencePercentage}%</span> in{" "}
-              {currentDate()}
-            </p>
-            <p className="text-sm text-gray-800">
-              compared to {customDateBeforeToday(1)}
-            </p>
+    <div className="border text-gray-500 w-full p-3 rounded-2xl">
+      <div className="flex w-full text-center md:text-left">
+        <div className="w-full space-y-3">
+          <p className="text-sm text-gray-800 font-medium">Performance</p>
+          <div className="flex gap-2 w-full justify-center md:justify-start">
+            <p className="text-6xl">{performanceKG}</p>
+            <p className="text-md">KG</p>
           </div>
+          <p className="text-sm text-gray-800">
+            {Number(differencePercentage) > 0 ? "Up by" : "Down to"}{" "}
+            <span className="text-lg">{differencePercentage}%</span> in{" "}
+            {currentDate()}
+          </p>
+          <p className="text-sm text-gray-800">
+            compared to {customDateBeforeToday(1)}
+          </p>
         </div>
       </div>
     </div>

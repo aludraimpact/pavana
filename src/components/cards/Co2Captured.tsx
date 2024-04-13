@@ -71,7 +71,7 @@ function Co2Captured() {
 
       {/* content */}
       <div className="h-30 justify-between">
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center flex-wrap">
           <Legend color={beforeYesterdayData.color} label={customDateBeforeToday(2)} />
           <Legend color={yesterdayData.color} label={customDateBeforeToday(1)} />
           <Legend color={currentData.color} label={currentDate()} />
