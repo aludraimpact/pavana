@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Pavana",
   description: "Pavana Dashboard",
   icons: {
-    icon: '/favicon.ico', // /public path
+    icon: "/favicon.ico", // /public path
   },
 };
 

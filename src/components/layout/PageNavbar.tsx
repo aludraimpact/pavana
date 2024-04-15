@@ -18,9 +18,7 @@ PageNavbarLeftContent.displayName = "PageNavbarLeftContent";
 const PageNavbarRightContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentPropsWithoutRef<"div">
->((props, ref) => (
-  <div ref={ref} className="justify-end" {...props} />
-));
+>((props, ref) => <div ref={ref} className="justify-end" {...props} />);
 
 PageNavbarRightContent.displayName = "PageNavbarRightContent";
 
@@ -52,7 +50,15 @@ PageNavbarPrimaryButton.displayName = "PageNavbarPrimaryButton";
 function PageNavbar({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <div className="flex p-2 md:p-4 text-gray-500 justify-between items-center" style={{backgroundImage: `url(${HeaderBackground.src})`, backgroundRepeat: 'round'}}>
+      <div
+        className="flex p-2 md:p-4 text-gray-500 justify-between items-center"
+        style={{
+          backgroundImage: `url(${HeaderBackground.src})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
         {children}
       </div>
 
