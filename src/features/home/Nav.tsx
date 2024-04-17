@@ -40,7 +40,7 @@ const Nav = ({ activeSection }: Links) => {
         <div
           className={`flex flex-row items-center hidden md:block justify-between ${
             navLinks[activeSection]?.className || "text-white"
-          }  text-2xl font-medium`}
+          }  text-2xl`}
         >
           {Object.values(navLinks).map((link, index) => (
             <Link
