@@ -2,11 +2,11 @@
 
 import { Calendar2 } from "iconsax-react";
 import PageContent from "@/components/layout/PageContent";
-import AbsorbenPerformance from "@/components/cards/AbsorbenPerformance";
-import Co2Captured from "@/components/cards/Co2Captured";
-import BasicInfo from "@/components/cards/BasicInfo";
-import FunctionUnit from "@/components/cards/FunctionUnit";
-import Summary from "@/components/cards/Summary";
+import AbsorbenPerformance from "@/features/dashboard/AbsorbenPerformance";
+import Co2Captured from "@/features/dashboard/Co2Captured";
+import BasicInfo from "@/features/dashboard/BasicInfo";
+import FunctionUnit from "@/features/dashboard/FunctionUnit";
+import Summary from "@/features/dashboard/Summary";
 import { currentDate } from "@/helpers/dates.helper";
 import ProtectedPage from "@/components/layout/ProtectedPage";
 import Navbar from "@/components/ui/Navbar";

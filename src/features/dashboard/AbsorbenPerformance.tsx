@@ -13,7 +13,7 @@ ChartJS.register(CategoryScale, LineElement, PointElement, LinearScale, Title);
 
 import { populateCurrentData, XTimeAxis, YAxis } from "@/helpers/graph.helper";
 import { currentDate } from "@/helpers/dates.helper";
-import Legend from "./ui/Legend";
+import Legend from "../../components/progress-bar/Legend";
 
 function AbsorbenPerformance() {
   const YAxisData = YAxis("performance");
@@ -22,7 +22,7 @@ function AbsorbenPerformance() {
     YAxisData.dataSet
   );
   const lineColor = YAxisData.color;
-  const highlightColor = 'red';
+  const highlightColor = "red";
   const currentDataColors = currentData.map((el, index) => {
     if (currentData.length - 1 === index) {
       return highlightColor;
@@ -70,7 +70,12 @@ function AbsorbenPerformance() {
           <Line data={data} options={options} />
         </div>
         <div className="mt-4 pr-2">
-          <Legend color={highlightColor} label='Reactor Replacement' legendType="round" position="right"/>
+          <Legend
+            color={highlightColor}
+            label="Reactor Replacement"
+            legendType="round"
+            position="right"
+          />
         </div>
       </div>
     </div>

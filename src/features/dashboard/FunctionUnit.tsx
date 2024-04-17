@@ -1,7 +1,5 @@
-import {
-  Health,
-} from "iconsax-react";
-import ProgressBar from "./ui/ProgressBar";
+import { Health } from "iconsax-react";
+import ProgressBar from "../../components/progress-bar/ProgressBar";
 
 const FunctionUnit = () => {
   const functionPercentage: Record<string, number> = {

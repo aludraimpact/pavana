@@ -13,7 +13,7 @@ ChartJS.register(CategoryScale, LineElement, PointElement, LinearScale, Title);
 
 import { populateCurrentData, XTimeAxis, YAxis } from "@/helpers/graph.helper";
 import { currentDate, customDateBeforeToday } from "@/helpers/dates.helper";
-import Legend from "./ui/Legend";
+import Legend from "../../components/progress-bar/Legend";
 
 function Co2Captured() {
   const beforeYesterdayData = YAxis("captured1");
@@ -72,8 +72,14 @@ function Co2Captured() {
       {/* content */}
       <div className="h-30 justify-between">
         <div className="flex gap-4 justify-center flex-wrap">
-          <Legend color={beforeYesterdayData.color} label={customDateBeforeToday(2)} />
-          <Legend color={yesterdayData.color} label={customDateBeforeToday(1)} />
+          <Legend
+            color={beforeYesterdayData.color}
+            label={customDateBeforeToday(2)}
+          />
+          <Legend
+            color={yesterdayData.color}
+            label={customDateBeforeToday(1)}
+          />
           <Legend color={currentData.color} label={currentDate()} />
         </div>
 
