@@ -9,16 +9,21 @@ export interface LinkItem {
 export type Link = Record<string, LinkItem>;
 
 export const navLinks: Link = {
+  home: {
+    id: "home",
+    label: "",
+    isLink: false,
+  },
   about: {
     id: "about",
     label: "About",
     isLink: false,
+    className: "text-gray-800",
   },
   technology: {
     id: "technology",
     label: "Technology",
     isLink: false,
-    className: "text-zinc-600",
   },
   monitoring: {
     id: "monitoring",

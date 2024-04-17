@@ -27,7 +27,7 @@ export default function Home() {
         </div>
         <div className="space-y-6 mt-3 md:mt-6 w-5/6 z-10">
           <div
-            className={`text-white text-2xl md:text-3xl lg:text-4xl text-left md:space-y-4 sm:px-8`}
+            className={`text-white text-2xl md:text-3xl lg:text-4xl text-left md:space-y-4 sm:px-8 font-light`}
           >
             <p className="leading-relaxed">
               Cutting-edge CO2 mitigation tech dominates emissions management,

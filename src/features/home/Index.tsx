@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { navLinks } from "@/features/home/enum/nav-links";
 import Section from "@/components/section/Section";
 import Home from "./parts/Home";
+import Technology from "./parts/Technology";
 
 export default function Index() {
   let [activeSection, setActiveSection] = useState("home");
@@ -42,8 +43,11 @@ export default function Index() {
   return (
     <div className="overflow-x-hidden scroll-smooth">
       <Nav activeSection={activeSection} />
-      <Section id={navLinks.about.id}>
+      <Section id={navLinks.home.id}>
         <Home />
+      </Section>
+      <Section id={navLinks.about.id}>
+        <Technology />
       </Section>
       {/* <div
         id={navLinks.home.id}

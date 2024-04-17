@@ -21,7 +21,7 @@ const Nav = ({ activeSection }: Links) => {
   };
 
   return (
-    <div className="w-screen fixed mt-8 py-0 pl-4 md:pl-8 pr-6 md:pr-16">
+    <div className="w-screen fixed mt-8 py-0 pl-4 md:pl-8 pr-6 md:pr-16 z-20">
       <div className="flex flex-row items-center justify-between">
         <Link href="/">
           <Image
@@ -42,17 +42,21 @@ const Nav = ({ activeSection }: Links) => {
             navLinks[activeSection]?.className || "text-white"
           }  text-2xl`}
         >
-          {Object.values(navLinks).map((link, index) => (
-            <Link
-              href={link?.url || `#${link.id}`}
-              key={index}
-              className={`px-8 cursor-pointer ${
-                activeSection == link.id && "text-[#2ea5e4] font-medium"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {Object.values(navLinks).map((link, index) => {
+            if (link.label) {
+              return (
+                <Link
+                  href={link?.url || `#${link.id}`}
+                  key={index}
+                  className={`px-8 cursor-pointer ${
+                    activeSection == link.id && "text-[#2ea5e4] font-medium"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            }
+          })}
         </div>
 
         <div className="block md:hidden">
