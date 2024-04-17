@@ -1,8 +1,8 @@
-"use client"
-import { redirect } from 'next/navigation'
+"use client";
+import Index from "@/features/home/Index";
 
-const Home = () => {
-  redirect("/login");
-}
+const LandingPage = () => {
+  return <Index />;
+};
 
-export default Home
+export default LandingPage;
