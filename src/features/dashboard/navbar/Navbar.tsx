@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import ProfileImage from "@/components/assets/profile.png";
 import PavanaLogo from "@/components/assets/logos/Pavana-logo.svg";
+import TelkomLogo from "@/components/assets/logos/Telkom-logo.svg";
 
 import PageNavbar, {
   PageNavbarLeftContent,
@@ -20,11 +21,29 @@ const Navbar = () => {
     router.push("/");
   };
 
+  const isMobile =
+    Math.min(window.screen.width, window.screen.height) < 768 ||
+    navigator.userAgent.indexOf("Mobi") > -1;
+
   return (
     <>
       <PageNavbar>
         <PageNavbarLeftContent>
-          <Image src={PavanaLogo} alt="Pavana Logo" height={50} />
+          <Image
+            src={PavanaLogo}
+            alt="Pavana Logo"
+            height={isMobile ? 30 : 50}
+          />
+        </PageNavbarLeftContent>
+
+        <PageNavbarLeftContent>
+          <div className="backdrop-blur-md bg-white/40 rounded-2xl">
+            <Image
+              src={TelkomLogo}
+              alt="Telkom Logo"
+              height={isMobile ? 40 : 70}
+            />
+          </div>
         </PageNavbarLeftContent>
 
         <PageNavbarRightContent

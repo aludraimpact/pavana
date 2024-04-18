@@ -9,7 +9,7 @@ import FunctionUnit from "@/features/dashboard/FunctionUnit";
 import Summary from "@/features/dashboard/Summary";
 import { currentDate } from "@/helpers/dates.helper";
 import ProtectedPage from "@/components/layout/ProtectedPage";
-import Navbar from "@/components/navbar/Navbar";
+import Navbar from "@/features/dashboard/navbar/Navbar";
 
 const Dashboard = () => {
   return (

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { navLinks } from "@/features/home/enum/nav-links";
 import Section from "@/components/section/Section";
 import Home from "./parts/Home";
-import Technology from "./parts/Technology";
+import Technology from "./parts/About";
 
 export default function Index() {
   let [activeSection, setActiveSection] = useState("home");
@@ -46,9 +46,9 @@ export default function Index() {
       <Section id={navLinks.home.id}>
         <Home />
       </Section>
-      <Section id={navLinks.about.id}>
+      {/* <Section id={navLinks.about.id}>
         <Technology />
-      </Section>
+      </Section> */}
       {/* <div
         id={navLinks.home.id}
         className="w-screen h-full bg-blue-500 flex flex-col justify-center items-center"
