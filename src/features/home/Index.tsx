@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 import { navLinks } from "@/features/home/enum/nav-links";
 import Section from "@/components/section/Section";
 import Home from "./parts/Home";
-import Technology from "./parts/About";
 
-export default function Index() {
+const Index = () => {
   let [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -78,4 +77,6 @@ export default function Index() {
       </div> */}
     </div>
   );
-}
+};
+
+export default Index;

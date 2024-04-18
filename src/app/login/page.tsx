@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
-export default function Login() {
+const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const router = useRouter();
 
@@ -99,4 +99,6 @@ export default function Login() {
       <ToastContainer />
     </>
   );
-}
+};
+
+export default Login;

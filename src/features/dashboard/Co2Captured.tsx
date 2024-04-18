@@ -15,7 +15,7 @@ import { populateCurrentData, XTimeAxis, YAxis } from "@/helpers/graph.helper";
 import { currentDate, customDateBeforeToday } from "@/helpers/dates.helper";
 import Legend from "../../components/progress-bar/Legend";
 
-function Co2Captured() {
+const Co2Captured = () => {
   const beforeYesterdayData = YAxis("captured1");
   const yesterdayData = YAxis("captured2");
   const currentData = YAxis("captured3");
@@ -89,6 +89,6 @@ function Co2Captured() {
       </div>
     </div>
   );
-}
+};
 
 export default Co2Captured;

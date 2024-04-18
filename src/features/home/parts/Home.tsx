@@ -5,7 +5,7 @@ import LineSvg from "@/components/assets/line-2.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="overflow-hidden h-screen w-screen">
       <div
@@ -59,4 +59,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

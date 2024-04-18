@@ -47,7 +47,7 @@ const PageNavbarPrimaryButton = React.forwardRef<
 ));
 PageNavbarPrimaryButton.displayName = "PageNavbarPrimaryButton";
 
-function PageNavbar({ children }: { children: React.ReactNode }) {
+const PageNavbar = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <div
@@ -65,7 +65,7 @@ function PageNavbar({ children }: { children: React.ReactNode }) {
       <hr className="bg-gray-400 mx-2" />
     </div>
   );
-}
+};
 
 export default PageNavbar;
 

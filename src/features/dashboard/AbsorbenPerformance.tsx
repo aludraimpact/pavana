@@ -15,7 +15,7 @@ import { populateCurrentData, XTimeAxis, YAxis } from "@/helpers/graph.helper";
 import { currentDate } from "@/helpers/dates.helper";
 import Legend from "../../components/progress-bar/Legend";
 
-function AbsorbenPerformance() {
+const AbsorbenPerformance = () => {
   const YAxisData = YAxis("performance");
   const currentData = populateCurrentData(
     Object.keys(XTimeAxis()),
@@ -80,6 +80,6 @@ function AbsorbenPerformance() {
       </div>
     </div>
   );
-}
+};
 
 export default AbsorbenPerformance;

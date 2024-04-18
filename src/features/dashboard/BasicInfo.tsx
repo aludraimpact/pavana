@@ -1,15 +1,6 @@
-import { useState } from "react";
-import Image from "next/image";
-import { Edit2, Heart, Barcode, Location, InfoCircle, Map } from "iconsax-react";
-import { motion } from "framer-motion";
-import Avatar2 from "../assets/avatars/avatar2.png";
-import Avatar3 from "../assets/avatars/avatar3.png";
+import { Barcode, Location, InfoCircle, Map } from "iconsax-react";
 
-function EmployeeSpotlight() {
-  const [activeTab, setActiveTab] = useState("comments");
-  const [comment1Liked, setComment1Liked] = useState(true);
-  const [comment2Liked, setComment2Liked] = useState(false);
-
+const EmployeeSpotlight = () => {
   return (
     <div className="border text-gray-500 w-full p-3 rounded-2xl space-y-4">
       {/* header */}
@@ -20,44 +11,43 @@ function EmployeeSpotlight() {
         </div>
       </div>
 
-      <hr className='bg-gray-400 my-4' />
+      <hr className="bg-gray-400 my-4" />
 
       {/* content */}
-      <div className='space-y-3'>
-                {/* note 1 */}
-                <div className='flex items-start gap-3 w-full'>
-                    <Location size={22} variant="Bulk" className='text-sky-500' />
-                    <div className='w-full space-y-1 columns-1 sm:columns-1 lg:columns-2'>
-                        <p className='text-sm text-gray-800 font-medium'>Location</p>
-                        <p className='text-sm'>Telkom Tower</p>
-                    </div>
-                </div>
+      <div className="space-y-3">
+        {/* note 1 */}
+        <div className="flex items-start gap-3 w-full">
+          <Location size={22} variant="Bulk" className="text-sky-500" />
+          <div className="w-full space-y-1 columns-1 sm:columns-1 lg:columns-2">
+            <p className="text-sm text-gray-800 font-medium">Location</p>
+            <p className="text-sm">Telkom Tower</p>
+          </div>
+        </div>
 
-                <hr className='bg-gray-400' />
+        <hr className="bg-gray-400" />
 
-                {/* note 2 */}
-                <div className='flex items-start gap-3 w-full'>
-                    <Map size={22} variant="Bulk" className='text-sky-500' />
-                    <div className='w-full space-y-1 columns-1 sm:columns-1 lg:columns-2'>
-                        <p className='text-sm text-gray-800 font-medium'>Coordinate</p>
-                        <p className='text-sm'>-6.229906780693371, 106.81894197489417</p>
-                    </div>
-                </div>
+        {/* note 2 */}
+        <div className="flex items-start gap-3 w-full">
+          <Map size={22} variant="Bulk" className="text-sky-500" />
+          <div className="w-full space-y-1 columns-1 sm:columns-1 lg:columns-2">
+            <p className="text-sm text-gray-800 font-medium">Coordinate</p>
+            <p className="text-sm">-6.229906780693371, 106.81894197489417</p>
+          </div>
+        </div>
 
-                <hr className='bg-gray-400' />
+        <hr className="bg-gray-400" />
 
-                {/* note 2 */}
-                <div className='flex items-start gap-3 w-full'>
-                    <Barcode size={22} variant="Bulk" className='text-sky-500' />
-                    <div className='w-full space-y-1 columns-1 sm:columns-1 lg:columns-2'>
-                        <p className='text-sm text-gray-800 font-medium'>Unit Code</p>
-                        <p className='text-sm'>001</p>
-                    </div>
-                </div>
-            
-            </div>
+        {/* note 2 */}
+        <div className="flex items-start gap-3 w-full">
+          <Barcode size={22} variant="Bulk" className="text-sky-500" />
+          <div className="w-full space-y-1 columns-1 sm:columns-1 lg:columns-2">
+            <p className="text-sm text-gray-800 font-medium">Unit Code</p>
+            <p className="text-sm">001</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default EmployeeSpotlight;
